@@ -1,4 +1,7 @@
 # chart-kured
+
+[![Build Status](https://dev.azure.com/hmcts/CNP/_apis/build/status/Helm%20Charts/chart-kured)](https://dev.azure.com/hmcts/CNP/_build/latest?definitionId=77)
+
 Helm Chart for Weaveworks Kured
 
 ## Links
