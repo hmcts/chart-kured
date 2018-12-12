@@ -1,7 +1,7 @@
 apiVersion: v1
 description: A Helm chart for Kured Kubernetes Reboot Daemon
 name: kured
-version: 0.0.2
+version: 0.0.3
 icon: https://github.com/weaveworks/kured/raw/master/img/logo.png
 keywords:
 - aks
