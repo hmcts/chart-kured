@@ -30,7 +30,7 @@ spec:
             - /usr/bin/kured
           args:
             - --ds-name={{ .Release.Name }}
-            - --ds-namespace={{ .Values.namespace }}
+            - --ds-namespace={{ .Release.Namespace }}
             - --lock-annotation=weave.works/kured-node-lock
             - --period=24h
             - --reboot-sentinel=/var/run/reboot-required
