@@ -1,4 +1,5 @@
 image: quay.io/weaveworks/kured:support-k8s-1.10-5731b98 #updated image as default is not compatable with later v's of kubectl
-slackWebhookUrl: 
+namespace: kured
+slackWebhookUrl:
 slackUsername: kured
 serviceAccount: kured

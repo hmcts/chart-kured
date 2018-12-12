@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: {{ .Release.Name }} # Must match `--ds-name`
-  namespace: kube-system    # Must match `--ds-namespace`
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
     helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version }}
@@ -25,13 +24,13 @@ spec:
       serviceAccountName: {{ .Values.serviceAccount }}
       containers:
         - name: kured
-          image: {{ .Values.image }} 
+          image: {{ .Values.image }}
           imagePullPolicy: IfNotPresent
           command:
             - /usr/bin/kured
           args:
             - --ds-name={{ .Release.Name }}
-            - --ds-namespace=kube-system
+            - --ds-namespace={{ .Values.namespace }}
             - --lock-annotation=weave.works/kured-node-lock
             - --period=24h
             - --reboot-sentinel=/var/run/reboot-required
