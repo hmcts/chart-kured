@@ -34,13 +34,18 @@ spec:
             - --lock-annotation=weave.works/kured-node-lock
             - --period=24h
             - --reboot-sentinel=/var/run/reboot-required
-            - --slack-hook-url={{ .Values.slackWebhookUrl }}
+            - --slack-hook-url="$SLACK_WEBHOOK_URL"
             - --slack-username={{ .Values.slackUsername }}
           env:
             - name: KURED_NODE_ID
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
+            - name: SLACK_WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: kured-values
+                  key: slackWebhookUrl
           volumeMounts:
             - name: hostrun
               mountPath: /var/run
