@@ -1,4 +1,3 @@
 image: weaveworks/kured:1.1.0
-slackWebhookUrl:
 slackUsername: kured
 serviceAccount: kured

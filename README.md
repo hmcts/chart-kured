@@ -13,6 +13,7 @@ The following table lists the configurable parameters of the Kured chart and the
 | Parameter                  | Description                                               | Default                                            |
 | -------------------------- | --------------------------------------------------------- | ---------------------------------------------------|
 | `image`                    | Full image url                                            | `quay.io/weaveworks/kured:support-k8s-1.10-5731b98`|
-| `slackWebhookUrl`          | slack hook URL for reboot notfications                    | `nil`                                              |
 | `slackUsername`            | slack username for reboot notfications                    | `kured`                                            |
 | `serviceAccount`           | Service account for RBAC                                  | `kured`                                            |
+
+The slack webhook url value is retrieved from the environment variable `SLACK_WEBHOOK_URL` which is assigned the value of the `slackWebhookUrl` key in the `kured-values` kubernetes secret. 
